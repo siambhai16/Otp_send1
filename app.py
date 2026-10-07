@@ -368,16 +368,12 @@ def send_otp():
 
 
     except Exception as e:
+    print("EMAIL ERROR:", repr(e), flush=True)
 
-        print(
-            "EMAIL ERROR:",
-            repr(e)
-        )
-
-        return jsonify({
-            "success": False,
-            "error": "Failed to send email"
-        }), 500
+    return jsonify({
+        "success": False,
+        "error": "Failed to send email"
+    }), 500
 
 
 # ==========================================
